@@ -21,9 +21,11 @@ export default function Favoritos() {
                     {favoritos.length >0 ?  favoritos.map((book) => (
                         <div key={book.id} className="livro" >
 
-                            <div className="title" >{book.title}</div>
+                            <div className="title" >{book.title} {book.name}</div>
 
-                            <div className="images" ><img src={book.image_url} alt="imagens livos" /></div>
+                            <div className="images" ><img src={book.image_url}  alt="imagens livos" />
+                
+                            </div>
 
                             <div className="button-class"  >
                                 {checarFavoritos(book.id) ? (

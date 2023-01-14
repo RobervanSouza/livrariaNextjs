@@ -23,7 +23,7 @@ export default function About() {
 
     useEffect(() => {
         try {
-            axios.get(Api_Url).then(res => {
+            axios.get("https://example-data.draftbit.com/properties?_limit=50").then(res => {
                 console.log(res.data);
                 setBooks(res.data);
             })
@@ -40,9 +40,9 @@ export default function About() {
                     {books.map((book) => (
                         <div key={book.id} className="livro" >
 
-                            <div className="title" >{book.title}</div>
+                            <div className="title" >{book.name}</div>
 
-                            <div className="images" ><img src={book.image_url } alt="imagens livos"  /></div>
+                            <div className="images" ><img src={book.image_url} alt="imagens livos"  /></div>
                              
                             <div className="button-class"  >
                                 {checarFavoritos(book.id) ? (
