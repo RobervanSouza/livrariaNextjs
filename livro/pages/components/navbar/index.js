@@ -6,11 +6,9 @@ export default function NavBar() {
         <>
             <NavStyled>
                 <nav>
-                    <div>
-                        
+                    <div>                       
                         <h1>Carbono</h1>
                     </div>
-
                     <ul>
                         <li>
                             <Link href='/'>Home</Link>
@@ -21,10 +19,7 @@ export default function NavBar() {
                         <li>
                             <Link href='/favoritos'>Favoritos</Link>
                         </li>
-
                     </ul>
-
-
                 </nav>
             </NavStyled>
         </>
