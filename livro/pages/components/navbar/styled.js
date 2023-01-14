@@ -5,8 +5,11 @@ export const NavStyled = styled.div`
 
 nav div{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    box-sizing: content-box;
+    
+    
 }
 nav div h1{
     margin-left: .5rem;
