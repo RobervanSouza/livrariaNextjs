@@ -1,4 +1,4 @@
-import { AboutStyled } from "./listaLivros/styled";
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Api_Url from "../pages/api/Api";
@@ -34,8 +34,9 @@ export default function Home() {
 
 
   return (
-    <>
-      <AboutStyled>
+    <> 
+    <body>
+      
         <div className="todos" >
           {books.map((book) => (
             <div key={book.id} className="livro" >
@@ -61,7 +62,59 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </AboutStyled>
+
+        <style jsx>{`
+      :global(body) {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
+          Helvetica, sans-serif;
+      }
+.todos{
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    
+}
+.livro{
+    text-align: center;
+    
+    
+}
+.title{
+    
+    width: 300px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: red;
+    
+}
+.button-class{
+    padding: 10px;
+    margin-block-end: 2rem;
+}
+.button{
+    position: relative;
+    padding: 10px;
+    background-color: aqua;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.images{
+    width: 100%;
+    transition: all 0.3s ease;
+
+}
+.images:hover{
+    transform: scale(1.03)
+}
+
+    `}</style>
+      </body>
     </>
 
   )

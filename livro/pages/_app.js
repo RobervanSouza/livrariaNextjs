@@ -1,18 +1,29 @@
 import '@/styles/globals.css'
-import { HomeStyled } from './styled-home';
+
 import Layout from './components/layout';
 import ContextProvider from './components/context/context';
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <HomeStyled>
+    <body>
+      
         <Layout>
         <ContextProvider>
 
           <Component {...pageProps} />
         </ContextProvider>
         </Layout>
-      </HomeStyled>
+        <style jsx>{`
+      :global(body) {
+       font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+      }
+    `}</style>
+
+      </body>
     </>
 
   )

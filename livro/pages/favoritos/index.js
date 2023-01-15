@@ -1,5 +1,4 @@
-import { SoluctionStyled } from "./styled"
-
+import React from "react";
 import { contextBoks } from "../components/context/context";
 export default function Favoritos() {
 
@@ -15,7 +14,8 @@ export default function Favoritos() {
 
     return (
         <>
-            <SoluctionStyled>
+        <body>
+            
                 <div className="todos">
 
                     {favoritos.length >0 ?  favoritos.map((book) => (
@@ -40,7 +40,59 @@ export default function Favoritos() {
                     )): <h2>não tem favoritos</h2>}
 
                 </div>
-            </SoluctionStyled>
+                <style jsx>{`
+      :global(body) {
+       font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+      }
+      .todos{
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+    
+}
+.livro{
+    text-align: center;
+    
+    
+}
+.title{
+    
+    width: 300px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: red;
+    
+}
+.button-class{
+    padding: 10px;
+    margin-block-end: 2rem;
+}
+.button{
+    position: relative;
+    padding: 10px;
+    background-color: aqua;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+.images{
+    width: 100%;
+    transition: all 0.3s ease;
+
+}
+.images:hover{
+    transform: scale(1.03)
+}
+    `}</style>
+            </body>
         </>
     )
 }
