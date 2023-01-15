@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Api_Url from "../pages/api/Api";
 import { contextBoks } from "../pages/components/context/context";
-
-export default function About() {
+import Link from "next/link";
+export default function Home() {
 
   const [ books, setBooks ] = useState([])
 
@@ -42,7 +42,12 @@ export default function About() {
 
               <div className="title" >{book.title}</div>
 
-              <div className="images" ><img src={book.image_url} alt="imagens livos" /></div>
+
+
+              <div className="images" >
+                <Link href={`/books/${book.id}`} ><img src={book.image_url} alt="imagens livos" /></Link>
+              </div>
+
 
               <div className="button-class"  >
                 {checarFavoritos(book.id) ? (

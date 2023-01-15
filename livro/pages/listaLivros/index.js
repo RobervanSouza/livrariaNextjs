@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Api_Url from "../api/Api";
 import { contextBoks } from "../components/context/context";
+import Link from "next/link";
 
 export default function About() {
 
@@ -42,8 +43,9 @@ export default function About() {
 
                             <div className="title" >{book.name}</div>
 
-                            <div className="images" ><img src={book.image_url} alt="imagens livos"  /></div>
-                             
+                            <div className="images" >
+                            <Link href={`/detalhes/${book.id}`} ><img src={book.image_url} alt="imagens livos" /></Link>
+                            </div>
                             <div className="button-class"  >
                                 {checarFavoritos(book.id) ? (
                                  <button className="button" onClick={() => removeFavoritos(book)} >Remover favoritos</button> 

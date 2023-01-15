@@ -19,6 +19,7 @@ export default function NavBar() {
                         <li>
                             <Link href='/favoritos'>Favoritos</Link>
                         </li>
+                       
                     </ul>
                 </nav>
             </NavStyled>
